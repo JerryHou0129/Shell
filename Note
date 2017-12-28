@@ -1,2 +1,42 @@
 cd..        go to the previous directory
 e: enter    change disks
+
+By using Bash, save the code as .sh file
+
+In sublime:
+
+#!/bin/bash
+echo "Hello World !"
+
+In Ubuntu:
+chmod +x ./helloWorld.sh     // give execution authority to the script
+./helloWorld.sh              // execute script
+
+The first line of the code is used to tell the system what kind of shell that are used to interpret the script
+without the first line, we could add an extra code in Bash:
+
+/bin/sh helloWorld.sh
+
+
+
+By using PowerShell in Windows10, asve the code as .bat/.ps1 file
+
+In sublime:
+echo "Hello World !"
+
+In PowerShell:
+./helloWorld.bat              // execute script
+./helloWorld.ps1              // execute script
+
+The second one might get an error of 
+
+./helloWorld.ps1 : File E:\Sublime Text\Sublime Text 3\codes\helloWorld.ps1 cannot be loaded because running scripts
+is disabled on this system. For more information, see about_Execution_Policies at
+https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:1
++ ./helloWorld.ps1
++ ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+    
+It is because this function requires the administrator authority, which prohibits the executing script for security reason in default
