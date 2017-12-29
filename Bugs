@@ -1,0 +1,7 @@
+1. unexpected disordered string output
+   disablity of "READ/DO/WHILE/FOR/DONE/etc...."
+   lack of functionality
+reason: the script is DOS encoded and sh/bash do not support it (i.e. we dont have \r in bash, only \n)
+solution: In bash: 1. install dos2unix
+                   2. run dos2unix test.sh
+   
