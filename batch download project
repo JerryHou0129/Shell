@@ -1,0 +1,23 @@
+0. The website is http://shouji.baidu.com/rank/features/classic/
+   The aim is to download Top 30 android game using script
+   
+1. We first view the page source
+2. Extract and formalise the data
+   wget http://shouji.baidu.com/rank/features/classic/ -O rank.html
+   grep data_name rank.html |sed 's/\(data_name="\)\(.*\)\("\)/\2/g' > data_name.txt
+   grep data_versionname rank.html |sed 's/\(data_versionname="\)\(.*\)\("\)/\2/g' > data_versionname.txt
+   grep data_url rank.html |sed 's/\(data_url="\)\(.*\)\("\)/\2/g' > data_url.txt
+3. paste data_url.txt data_name.txt > download.txt
+   awk '{print "wget " $1 " -O " $2NR".apk"}' download.txt > download.sh
+
+
+grep data_name rank.html |sed 's/\(data_name="\)\(.*\)\("\)/\2/g' > data_name.txt
+s/.../xxx/g  is used to replace ... to xxx
+In this case, we replace  
+                 data_name="wechat"
+                 to
+                 wechat
+Three brackets, the first one is data_name"
+                the second one is wechat
+                the third one is "
+                
